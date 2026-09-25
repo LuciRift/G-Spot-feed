@@ -1,11 +1,13 @@
 # What's New
 - Added new skybox
-- Added new triangle room
-- Added new  avatar menu
-- Added air hockey
-- Added rain
-- Added faucets with working water.
-- Added and a lot more.
+- Added new Halloween Settings
+- Added new Posters
+- Ricochet OS v2
+
+# Updated
+- VRChat SDK - Worlds
+- VRChat SDK - Base
+- Bakery - GPU Lightmapper
 
 ## Bug Fixes
 - Fixed Lighting
