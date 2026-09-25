@@ -1,0 +1,14 @@
+# What's New
+- Added new skybox
+- Added new triangle room
+- Added new  avatar menu
+- Added air hockey
+- Added rain
+- Added faucets with working water.
+- Added and a lot more.
+
+## Bug Fixes
+- Fixed Lighting
+- Fixed Skybox
+- Fixed file size
+- and more

@@ -1,0 +1,12 @@
+avtr_d30a329a-8bdb-4d8f-8741-8dad34d104f9:Watcher
+avtr_fc0fb770-9ade-474d-a59e-b7a064550213:Fang Furality Ultra
+avtr_cca352d8-ae6e-4100-82b3-012bf631b3c5:Rioy
+avtr_6b950090-8310-4eed-a9c8-6688a37c6678:Shadow Claw
+avtr_5d625bec-d427-4762-b603-9dbb3eb0e243:Kael
+avtr_f2b2ff5f-772b-4a17-8d96-94fed62b341d:Razer
+avtr_759583dd-f96c-42a0-be50-83cd7bff0cb9:North
+avtr_4516da9e-efac-4e7f-82bb-7baf8350cdf4:Daxon
+avtr_0cdea4cb-226f-4f08-b316-9719850e1172:Lucifer
+avtr_e0b770a3-973d-4092-8822-d856347da786:Vexarion
+avtr_9a7facfb-9e04-4ed4-9bab-7cd15bfe10cf:Death Hound
+avtr_e226dbb3-3019-4f94-ab77-474bc63f82e3:Azerin
