@@ -51,6 +51,10 @@
     h2 { margin: 0; font-size: 16px; letter-spacing: -.025em; }
     .hint { margin: 7px 0 0; color: var(--soft); font-size: 13px; line-height: 1.6; }
     .count { flex: 0 0 auto; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--soft); font-size: 11px; }
+    .file-list { display: grid; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .file-row a { display: flex; min-height: 48px; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); font-size: 13px; text-decoration: none; overflow-wrap: anywhere; transition: border-color 220ms var(--ease), background 220ms var(--ease); }
+    .file-row a:hover { border-color: rgb(75 140 255 / 35%); background: var(--accent-soft); }
+    .file-row a span:last-child { flex: 0 0 auto; color: #92baff; }
     .empty { padding-block: 38px 14px; text-align: center; }
     .file-mark { display: grid; width: 48px; height: 48px; margin: 0 auto 15px; place-items: center; border: 1px solid rgb(75 140 255 / 25%); border-radius: 16px; background: var(--accent-soft); color: #91b9ff; }
     .file-mark svg { width: 21px; height: 21px; }
@@ -95,7 +99,7 @@
       <section class="intro" aria-labelledby="page-title">
         <p class="eyebrow">G Spot data feed</p>
         <h1 id="page-title">World data,<br><span>served simply.</span></h1>
-        <p class="lede">A home for the plain-text for G Spot data feed Each file has a direct HTTPS URL that your world can fetch without a website app, login, or special API.</p>
+        <p class="lede">A home for plain-text data used by the G Spot VRChat world. Each file has a direct HTTPS URL your world can fetch without a website app, login, or special API.</p>
       </section>
 
       <section class="panel-shell" aria-labelledby="files-title">
@@ -103,19 +107,24 @@
           <div class="panel-heading">
             <div>
               <h2 id="files-title">Published text files</h2>
-              <p class="hint">Files added to <code>files/</code> appear here automatically.</p>
+              <p class="hint">Public text files in <code>files/</code> are listed here.</p>
             </div>
-            <span class="count">0 files</span>
+            <span class="count">3 files</span>
           </div>
-          <div class="empty">
+          <ul class="file-list" aria-label="Available text files">
+            <li class="file-row"><a href="./files/avatars.txt"><span>avatars.txt</span><span aria-hidden="true">↗</span></a></li>
+            <li class="file-row"><a href="./files/log.txt"><span>log.txt</span><span aria-hidden="true">↗</span></a></li>
+            <li class="file-row"><a href="./files/staff.txt"><span>staff.txt</span><span aria-hidden="true">↗</span></a></li>
+          </ul>
+          <div class="empty" hidden>
             <span class="file-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><path d="M13 3v7h7M8 15h8M8 18h6"/></svg></span>
             <strong>No text files yet</strong>
             <p>Drop your <code>.txt</code> files into <code>files/</code> and push the changes. Their raw links will use the same path on your GitHub Pages site.</p>
           </div>
           <div class="steps" aria-label="How to add files">
-            <article class="step"><span class="step-number">STEP 01</span><strong>Add a text file</strong><p>For example: <code>vrchat/files/world-info.txt</code></p></article>
-            <article class="step"><span class="step-number">STEP 02</span><strong>Enable GitHub Pages</strong><p>In repository Settings, open Pages and deploy from the <code>main</code> branch root.</p></article>
-            <article class="step"><span class="step-number">STEP 03</span><strong>Use its direct URL</strong><p><code>https://lucirift.github.io/Ricochet-Store/vrchat/files/world-info.txt</code></p></article>
+            <article class="step"><span class="step-number">STEP 01</span><strong>Add a text file</strong><p>Put public <code>.txt</code> files in the repository's <code>files/</code> folder.</p></article>
+            <article class="step"><span class="step-number">STEP 02</span><strong>Push your changes</strong><p>GitHub Pages deploys the files and page automatically from the <code>main</code> branch.</p></article>
+            <article class="step"><span class="step-number">STEP 03</span><strong>Use its direct URL</strong><p><code>https://lucirift.github.io/G-Spot-feed/files/staff.txt</code></p></article>
           </div>
         </div>
       </section>
