@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Public text files for LuciRift VRChat worlds, hosted as simple static files.">
+  <title>VRChat Files | LuciRift</title>
+  <link rel="icon" href="../public/images/favicon.ico" sizes="any">
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #080b12;
+      --surface: #0d121c;
+      --card: #111927;
+      --line: rgb(161 180 211 / 12%);
+      --ink: #f2f5fb;
+      --soft: #a3aec1;
+      --accent: #4b8cff;
+      --accent-soft: rgb(75 140 255 / 12%);
+      --ease: cubic-bezier(.32,.72,0,1);
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      background: var(--page);
+      color: var(--ink);
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background: radial-gradient(ellipse at 50% -22%, rgb(0 70 190 / 20%), transparent 42rem), var(--page);
+      color: var(--ink);
+    }
+    a { color: inherit; }
+    .shell { width: min(100% - 40px, 1000px); margin-inline: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 25px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-size: 14px; font-weight: 750; letter-spacing: -.025em; }
+    .brand img { width: 37px; height: 37px; border: 1px solid var(--line); border-radius: 50%; object-fit: cover; }
+    .header-link { color: var(--soft); font-size: 13px; text-decoration: none; transition: color 220ms var(--ease); }
+    .header-link:hover { color: var(--ink); }
+    main { padding-block: clamp(54px, 10vw, 112px) 84px; }
+    .intro { max-width: 700px; margin-bottom: 38px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 19px; padding: 7px 11px; border: 1px solid rgb(75 140 255 / 24%); border-radius: 999px; background: var(--accent-soft); color: #92baff; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px rgb(75 140 255 / 75%); content: ""; }
+    h1 { margin: 0; font-size: clamp(38px, 7vw, 68px); font-weight: 780; letter-spacing: -.065em; line-height: 1.04; }
+    h1 span { color: #75a8ff; }
+    .lede { max-width: 590px; margin: 19px 0 0; color: var(--soft); font-size: clamp(15px, 2.5vw, 17px); line-height: 1.75; }
+    .panel-shell { padding: 5px; border: 1px solid rgb(177 197 231 / 10%); border-radius: 27px; background: rgb(255 255 255 / 2%); box-shadow: 0 26px 90px rgb(0 0 0 / 20%); }
+    .panel { padding: clamp(20px, 4vw, 34px); border: 1px solid rgb(255 255 255 / 4%); border-radius: 22px; background: linear-gradient(145deg, rgb(17 25 39 / 97%), rgb(12 17 27 / 98%)); }
+    .panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0; font-size: 16px; letter-spacing: -.025em; }
+    .hint { margin: 7px 0 0; color: var(--soft); font-size: 13px; line-height: 1.6; }
+    .count { flex: 0 0 auto; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--soft); font-size: 11px; }
+    .empty { padding-block: 38px 14px; text-align: center; }
+    .file-mark { display: grid; width: 48px; height: 48px; margin: 0 auto 15px; place-items: center; border: 1px solid rgb(75 140 255 / 25%); border-radius: 16px; background: var(--accent-soft); color: #91b9ff; }
+    .file-mark svg { width: 21px; height: 21px; }
+    .empty strong { display: block; font-size: 14px; }
+    .empty p { max-width: 520px; margin: 9px auto 0; color: var(--soft); font-size: 13px; line-height: 1.75; }
+    code { padding: 3px 6px; border: 1px solid var(--line); border-radius: 6px; background: rgb(255 255 255 / 4%); color: #b9d2ff; font-size: .92em; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 15px; }
+    .step { min-width: 0; padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: rgb(255 255 255 / 2%); }
+    .step-number { display: block; margin-bottom: 12px; color: #79aaff; font-size: 10px; font-weight: 750; letter-spacing: .13em; }
+    .step strong { display: block; font-size: 12px; }
+    .step p { margin: 7px 0 0; color: var(--soft); font-size: 11px; line-height: 1.65; overflow-wrap: anywhere; }
+    footer { display: flex; justify-content: space-between; gap: 18px; padding-block: 21px 27px; border-top: 1px solid var(--line); color: #78859a; font-size: 11px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+    :focus-visible { outline: 2px solid #8bb5ff; outline-offset: 4px; border-radius: 4px; }
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 32px, 1000px); }
+      header { padding-block: 18px; }
+      main { padding-top: 56px; }
+      .steps { grid-template-columns: 1fr; }
+      .step { display: grid; grid-template-columns: 42px 1fr; column-gap: 10px; }
+      .step-number { grid-row: span 2; margin: 2px 0 0; }
+      .step p { margin-top: 5px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="https://lucirift.com" aria-label="LuciRift home">
+        <img src="../public/images/logo.png" alt="">
+        <span>LuciRift</span>
+      </a>
+      <a class="header-link" href="https://lucirift.com">Back to website <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">VRChat world files</p>
+        <h1 id="page-title">World data,<br><span>served simply.</span></h1>
+        <p class="lede">A home for the plain-text files your VRChat world needs. Each file has a direct HTTPS URL that your world can fetch without a website app, login, or special API.</p>
+      </section>
+
+      <section class="panel-shell" aria-labelledby="files-title">
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <h2 id="files-title">Published text files</h2>
+              <p class="hint">Files added to <code>vrchat/files/</code> appear here automatically.</p>
+            </div>
+            <span class="count">0 files</span>
+          </div>
+          <div class="empty">
+            <span class="file-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><path d="M13 3v7h7M8 15h8M8 18h6"/></svg></span>
+            <strong>No text files yet</strong>
+            <p>Drop your <code>.txt</code> files into <code>vrchat/files/</code> and push the changes. Their raw links will use the same path on your GitHub Pages site.</p>
+          </div>
+          <div class="steps" aria-label="How to add files">
+            <article class="step"><span class="step-number">STEP 01</span><strong>Add a text file</strong><p>For example: <code>vrchat/files/world-info.txt</code></p></article>
+            <article class="step"><span class="step-number">STEP 02</span><strong>Enable GitHub Pages</strong><p>In repository Settings, open Pages and deploy from the <code>main</code> branch root.</p></article>
+            <article class="step"><span class="step-number">STEP 03</span><strong>Use its direct URL</strong><p><code>https://lucirift.github.io/Ricochet-Store/vrchat/files/world-info.txt</code></p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Plain text over HTTPS, hosted by GitHub Pages.</span>
+      <a href="https://github.com/LuciRift/Ricochet-Store">Source repository <span aria-hidden="true">↗</span></a>
+    </footer>
+  </div>
+</body>
+</html>
