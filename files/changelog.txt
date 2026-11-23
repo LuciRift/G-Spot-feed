@@ -1,6 +1,6 @@
 # What's New
 - Added new skybox
-- Added new Halloween Settings
+- Removed Halloween stuff
 - Added new Posters
 - Ricochet OS v2
 
